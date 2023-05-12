@@ -9,7 +9,6 @@ import { RxDotFilled } from 'react-icons/rx'
 import { FiLink } from 'react-icons/fi'
 import { Metadata } from "next";
 import jwtDecode from "jwt-decode";
-
 export default function Dashboard({studentData, loginData}: Student) {
     const router: NextRouter = useRouter()
 
