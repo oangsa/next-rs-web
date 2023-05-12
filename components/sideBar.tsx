@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 
 
-const SideBar = forwardRef(({ showNav }: any, Ref) => {
+const SideBar = forwardRef(({ showNav }: any, Ref:any) => {
 const router = useRouter();
 
   return (
