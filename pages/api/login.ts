@@ -7,7 +7,6 @@ export default async function Login(req: NextApiRequest, res: NextApiResponse) {
     const { username, password } = req.body
     if (req.method !== "POST") return res.status(405).send({message: "Only GET method is allowed!"})
 
-    console.log(username)
     try {
         connectMongo()
         const result = await Note.findOne({loginData: { username: username, password: password}})

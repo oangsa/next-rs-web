@@ -1,7 +1,8 @@
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, useEffect, useState } from "react"
 import { useRouter, type NextRouter } from "next/router"
 import Swal from "sweetalert2"
 import Navbar from '@/components/sideBar'
+import { hasCookie } from "cookies-next"
 export default function LoginPage() {
     const router: NextRouter = useRouter()
     const [data, setData] = useState({
@@ -9,7 +10,12 @@ export default function LoginPage() {
         password: ''
     })
 
-    // const [data, setData] = useState([])
+    useEffect(() => {
+        const goShit = () => {
+            return process.env.NODE_ENV === 'development' ?  "" : !hasCookie("user-token") ? "" : router.push("/dashboard")
+        }
+        goShit()
+    })
 
     const getData = async () => {
         const res = await fetch("/api/checkAuth", {
