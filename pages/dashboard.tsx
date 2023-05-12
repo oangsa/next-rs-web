@@ -22,7 +22,7 @@ export default function Dashboard({studentData, loginData}: Student) {
     
             const $modalElement: any = document.querySelector('#leaveModal');
             
-            const modal: ModalInterface = new Modal($modalElement, modalOptions);
+            const modal = new Modal($modalElement, modalOptions);
     
             modal.show();
     
@@ -82,7 +82,7 @@ export default function Dashboard({studentData, loginData}: Student) {
     )
 }
 
-export const getStudent = async (studentId: CookieValueTypes) => {
+export const getStudent = async (studentId: any) => {
     const baseURL = process.env.NODE_ENV === 'production' ? process.env.VERCEL_URL : process.env.BASE_URL
     console.log(baseURL)
     const res = await fetch(`${baseURL}/api/getStudent/${studentId}`)
