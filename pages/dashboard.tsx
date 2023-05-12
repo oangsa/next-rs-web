@@ -83,9 +83,9 @@ export default function Dashboard({studentData, loginData}: Student) {
 }
 
 export const getStudent = async (studentId: CookieValueTypes) => {
-    const baseURL = process.env.NODE_ENV === 'production' ? process.env.VERCEL_URL : process.env.BASE_URL
+    const baseURL = process.env.NODE_ENV === 'production' ? `https://${process.env.VERCEL_URL}` : process.env.BASE_URL
     console.log(baseURL)
-    const res = await fetch(`https://${baseURL}/api/getStudent/${studentId}`)
+    const res = await fetch(`${baseURL}/api/getStudent/${studentId}`)
 
     if (!res.ok) throw new Error('Failed To Fetch User')
 
