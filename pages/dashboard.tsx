@@ -4,7 +4,7 @@ import { CookieValueTypes, getCookie, hasCookie } from 'cookies-next';
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
 import LeaveModal from "@/components/leaveModal";
 import { modalOptions } from "@/libs/modalOption";
-import { ModalInterface, Modal } from "flowbite";
+import { Modal } from "flowbite";
 import { RxDotFilled } from 'react-icons/rx'
 import { FiLink } from 'react-icons/fi'
 import { Metadata } from "next";
@@ -82,7 +82,7 @@ export default function Dashboard({studentData, loginData}: Student) {
     )
 }
 
-export const getStudent = async (studentId: any) => {
+export const getStudent = async (studentId: CookieValueTypes) => {
     const baseURL = process.env.NODE_ENV === 'production' ? process.env.VERCEL_URL : process.env.BASE_URL
     console.log(baseURL)
     const res = await fetch(`${baseURL}/api/getStudent/${studentId}`)

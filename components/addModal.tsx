@@ -31,7 +31,7 @@ const AddModal = () => {
     
             const $modalElement: any = document.querySelector('#modalEl');
             
-            const modal: ModalInterface = new Modal($modalElement, modalOptions);
+            const modal: any = new Modal($modalElement, modalOptions);
     
             modal.hide();
             
