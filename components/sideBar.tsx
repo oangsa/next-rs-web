@@ -12,7 +12,7 @@ const router = useRouter();
   return (
     <div ref={Ref} className="fixed w-56 h-full bg-white shadow-sm">
       <div className="flex justify-center mt-6 mb-14">
-		<Image width={150} height={150} src={Logo} alt="company logo" />
+		    <Image width={150} height={150} src={Logo} alt="company logo" />
       </div>
 
       <div className="flex flex-col">

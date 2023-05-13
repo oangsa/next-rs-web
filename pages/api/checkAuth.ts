@@ -10,7 +10,7 @@ import cookie from 'cookie'
 export default async function checkAuth(req: NextApiRequest, res: NextApiResponse) {
     const username: string = req.body.username
     const password: string = req.body.password
-    if (req.method !== "POST") return res.status(405).send({message: "Only GET method is allowed!"})
+    if (req.method !== "POST") return res.status(405).send({message: "Only POST method is allowed!"})
 
     try {
         connectMongo()
