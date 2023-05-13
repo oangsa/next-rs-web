@@ -1,10 +1,12 @@
 import { ChangeEvent, useEffect, useState } from "react"
-import { useRouter, type NextRouter } from "next/router"
+import { type NextRouter } from "next/router"
+import { useRouter } from "next/navigation"
 import Swal from "sweetalert2"
 import Navbar from '@/components/sideBar'
 import { hasCookie } from "cookies-next"
+import { AppRouterInstance } from "next/dist/shared/lib/app-router-context"
 export default function LoginPage() {
-    const router: NextRouter = useRouter()
+    const router: AppRouterInstance = useRouter()
     const [data, setData] = useState({
         username: '',
         password: ''
@@ -49,7 +51,7 @@ export default function LoginPage() {
             icon: "error",
         })
 
-        router.reload()
+        router.refresh()
     }
     
     const submit = async () => {
