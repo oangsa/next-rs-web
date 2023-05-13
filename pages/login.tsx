@@ -41,7 +41,7 @@ export default function LoginPage() {
             icon: "success",
         })
 
-        router.push('/dashboard')
+        router.refresh()
     }
     
     const swalError = () => {
