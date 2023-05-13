@@ -21,9 +21,9 @@ export default function LoginPage() {
 
     const getData = async () => {
         const res = await fetch("/api/checkAuth", {
-            method: "POST", // *GET, POST, PUT, DELETE, etc.
-            mode: "cors", // no-cors, *cors, same-origin
-            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            method: "POST",
+            mode: "cors",
+            cache: "no-cache",
             headers: {
                 "Content-Type": "application/json",
             },

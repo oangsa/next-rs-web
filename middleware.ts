@@ -11,11 +11,17 @@ export async function middleware(req: NextRequest) {
     
     const { pathname } = req.nextUrl;
 
+    console.log(pathname)
+
     if (!verifyToken && pathname === "/") return NextResponse.redirect(new URL('/login', req.url))
 
     if (!verifyToken && pathname.includes('/dashboard')) return NextResponse.redirect(new URL('/login', req.url))
     
     if (!verifyToken && pathname.includes('/leaves')) return NextResponse.redirect(new URL('/login', req.url))
+    
+    if (!verifyToken && pathname.includes('/settings')) return NextResponse.redirect(new URL('/login', req.url))
+    
+    if (!verifyToken && pathname.includes('/admin')) return NextResponse.redirect(new URL('/login', req.url))
 
     if(pathname.startsWith('/login') && !verifyToken) return;
 
@@ -24,5 +30,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-    matcher: ['/dashboard', '/login', '/leaves', '/']
+    matcher: ['/', '/dashboard', '/login', '/leaves', '/settings', '/admin/:path*']
 }

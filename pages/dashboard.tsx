@@ -6,6 +6,7 @@ import LeaveModal from "@/components/leaveModal";
 import { modalOptions } from "@/libs/modalOption";
 import { Modal } from "flowbite";
 import { FiLink } from 'react-icons/fi'
+import { TfiUnlink } from 'react-icons/tfi'
 import { Metadata } from "next";
 import jwtDecode from "jwt-decode";
 import { studentData, loginData } from "@/libs/interface"
@@ -66,10 +67,6 @@ export default function Dashboard() {
         }
     }
     
-    const submit = () => {
-        
-    }
-    
     return (
         <>
             <p className="text-gray-700 text-3xl mb-16 font-bold">Dashboard</p>
@@ -96,10 +93,19 @@ export default function Dashboard() {
                                 ลาเลย !
                             </div>
                             <div className="mt-2 ml-4">
-                                <button onClick={leaveClick} type="button" className="w-1/2 text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-200 font-medium inline-flex items-center justify-center rounded-lg text-sm px-3 py-2 text-center sm:w-auto">
-                                    <FiLink className="mr-2 h-5 w-5"/>
-                                    ลาที่นี่
-                                </button>
+                                {studentData.status === true ? 
+
+                                    <button disabled onClick={leaveClick} type="button" className="w-1/2 text-white bg-gray-300 focus:ring-4 font-medium inline-flex items-center justify-center rounded-lg text-sm px-3 py-2 text-center sm:w-auto">
+                                        <TfiUnlink className="mr-2 h-5 w-5"/>
+                                        ลาไปแล้ว
+                                    </button>
+                                    : 
+                                    <button onClick={leaveClick} type="button" className="w-1/2 text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-200 font-medium inline-flex items-center justify-center rounded-lg text-sm px-3 py-2 text-center sm:w-auto">
+                                        <FiLink className="mr-2 h-5 w-5"/>
+                                        ลาที่นี่
+                                    </button>
+                                }
+                                
                                 <LeaveModal name={studentData.name} studentId={studentData.studentId} />
                             </div>
                         </div>
