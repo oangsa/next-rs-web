@@ -39,7 +39,7 @@ export default function LoginPage() {
             icon: "success",
         })
 
-        setTimeout(() => router.push('/dashboard'), 1500)
+        router.push('/dashboard')
     }
     
     const swalError = () => {
@@ -49,7 +49,7 @@ export default function LoginPage() {
             icon: "error",
         })
 
-        setTimeout(() => router.reload(), 1500)
+        router.reload()
     }
     
     const submit = async () => {
