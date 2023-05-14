@@ -9,12 +9,14 @@ function Footer() {
     const router: NextRouter = useRouter()
 	return (
 		<>
-			<div className="bg-gradient-to-b from-white via-white to-orange-300 h-auto w-full flex md:flex-row flex-col justify-around items-start p-20">
-				<div className="p-5 ">
+			<div className="bg-gradient-to-b from-white via-white to-orange-300 h-auto w-full flex md:flex-row flex-col justify-around items-center">
+				<div className="p-5">
 					<ul>
-						<p className="flex items-center justify-center text-orange-500 font-bold text-3xl pb-6">
-                            <Image className="mr-2" width={50} height={50} src={Logo} alt="company logo" /> 
-                            Ratchasima Witthayalai<span className="text-gray-800 ml-2">School</span>
+						<p className="flex items-center justify-center text-orange-500 font-bold md:text-lg sm:text-md lg:text-3xl pb-6">
+                            <Image className="mr-2" width={50} height={50} src={Logo} alt="company logo" />
+							Rajsima
+                            <span className="ml-1 text-orange-500 font-bold md:text-lg sm:text-md lg:text-3xl">Witthayalai</span>
+                            <span className="text-gray-500 ml-1">School</span>
 						</p>
 						<div className="flex gap-6 pb-5">
 							<FaInstagram onClick={() => router.push("https://www.instagram.com/fakbok_rajsima/")} className="text-2xl cursor-pointer hover:text-yellow-600" />
@@ -22,14 +24,6 @@ function Footer() {
 							<FaYoutube onClick={() => router.push("https://youtu.be/Qjqz6QC_t6E")} className="text-2xl cursor-pointer hover:text-red-600" />
 							<FaFacebook onClick={() => router.push("https://www.facebook.com/PR.RajsimaWittayalai")} className="text-2xl cursor-pointer hover:text-blue-600" />
 						</div>
-					</ul>
-				</div>
-				<div className="p-5">
-					<ul>
-						<p className="text-gray-800 font-bold text-2xl pb-4">Developers</p>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-                            👑 Suthang Sukrueangkun 👑
-						</li>
 					</ul>
 				</div>
 			</div>

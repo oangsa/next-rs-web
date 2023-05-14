@@ -63,7 +63,6 @@ const LeaveModal: FC<leaveModal> = ({ name, studentId }) => {
     }
 
     const leave = async () => {
-
         const res = await fetch(`/api/leaves/${studentId}`, {
             method: "POST",
             mode: "cors",
