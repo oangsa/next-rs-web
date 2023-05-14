@@ -13,7 +13,7 @@ const Settings = () => {
         classNumber: "",
         studentId: "",
         secondary: "",
-        class: "",
+        class: 0,
         status: false,
         reason: "",
         total: 0,

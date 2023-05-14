@@ -19,7 +19,7 @@ export default function Dashboard() {
         classNumber: "",
         studentId: "",
         secondary: "",
-        class: "",
+        class: 0,
         status: false,
         reason: "",
         total: 0,

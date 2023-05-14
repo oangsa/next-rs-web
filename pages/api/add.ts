@@ -27,7 +27,7 @@ export default async function add( req: NextApiRequest,res: NextApiResponse) {
         classNumber: number,
         studentId: studentID,
         secondary: yearClass,
-        class: Class,
+        class: parseInt(Class),
         status: false,
         reason: "-",
         total: 0,

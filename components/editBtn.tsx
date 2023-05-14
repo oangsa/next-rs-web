@@ -7,7 +7,7 @@ interface ModalProp {
     studentID: string, 
     number: string, 
     yearClass: string, 
-    Class: string,
+    Class: number,
     username: string,
     password: string,
 }

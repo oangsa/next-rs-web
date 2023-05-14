@@ -11,7 +11,7 @@ const AddModal = () => {
     const [data, setData] = useState({
         name: "", 
         studentID: "", 
-        number: "", 
+        number: 0, 
         yearClass: "", 
         Class: ""
     })

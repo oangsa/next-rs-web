@@ -9,7 +9,7 @@ export default async function getAll(req: NextApiRequest, res: NextApiResponse) 
     try {
         connectMongo()
         
-        const result = await Note.find({}).sort({ "studentData.secondary" : 1, "studentData.class" : 1, "studentData.classNumber" : 1})
+        const result = await Note.find({}).sort({ "studentData.secondary" : 1, "studentData.class" : 1, "studentData.classNumber": 1})
         
         if (result === null) return res.status(400).send({message: "User is not valid."})
 

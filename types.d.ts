@@ -4,7 +4,7 @@ type Student = {
         classNumber: string,
         studentId: string,
         secondary: string,
-        class: string,
+        class: number,
         status: boolean,
         reason: string,
         total: number,

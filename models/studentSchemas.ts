@@ -6,7 +6,7 @@ const studentSchema = new Schema({
         classNumber: String,
         studentId: String,
         secondary: String,
-        class: String,
+        class: Number,
         status: Boolean,
         reason: String,
         total: Number,

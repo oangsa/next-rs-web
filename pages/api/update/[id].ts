@@ -30,7 +30,7 @@ export default async function update( req: NextApiRequest, res: NextApiResponse 
     
     if ( !pass ) return res.status(202).send({message: "Username is already taken."})
     
-    if ( isUserUpdate === 'false' ) await Note.updateOne({ "studentData.studentId": id }, {$set: {"studentData.name": name, "studentData.classNumber": number, "studentData.secondary": yearClass, "loginData.username": username, "loginData.password": password}})
+    if ( isUserUpdate === 'false' ) await Note.updateOne({ "studentData.studentId": id }, {$set: {"studentData.name": name, "studentData.classNumber": parseInt(number), "studentData.secondary": yearClass, "loginData.username": username, "loginData.password": password}})
     if ( isUserUpdate === 'true' ) await Note.updateOne({ "studentData.studentId": id }, {$set: {"loginData.username": username !== "" ? username : oldData.loginData.username, "loginData.password": password !== "" ? password : oldData.loginData.password } })
     
     return res.status(200).send({ message: true })

@@ -5,16 +5,6 @@ import { NextRouter, useRouter } from "next/router"
 import { modalOptions } from "@/libs/modalOption"
 import Swal from "sweetalert2"
 
-interface ModalProp {
-    name: string, 
-    studentID: string, 
-    number: string, 
-    yearClass: string, 
-    Class: string,
-    username: string,
-    password: string,
-}
-
 function EditModal (props: { name: any; studentID: any; number: any; yearClass: any; Class: any; username: any; password: any }) {
     const router: NextRouter = useRouter()
 
