@@ -1,0 +1,12 @@
+{
+    "crons": [
+        {
+            "path": "/api/cron/setDay",
+            "schedule": "* 1 * * *"
+        },
+        {
+            "path": "/api/cron/setWeek",
+            "schedule": "* * * * 0"
+        }
+    ]
+  }
