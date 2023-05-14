@@ -82,13 +82,24 @@ const LeaveModal: FC<leaveModal> = ({ name, studentId }) => {
 
     }
 
-    const submit = async () => {
-        console.log(data.reason, data.half)
-        if (data.reason === "เลือกเหตุผล" || data.half === "เลือกเวลา") return
+    const submit = async () => { 
 
-        if (!leave()) return 
-
-        swalFunc({title:"สำเร็จ", icon:"success"})
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Confirm'
+        }).then(async (result) => {
+            
+            if (result.isConfirmed) {
+                if (data.reason === "เลือกเหตุผล" || data.half === "เลือกเวลา") return swalFunc({title:"ไม่สำเร็จ", icon:"error"})
+                else if (!leave()) return swalFunc({title:"ไม่สำเร็จ", icon:"error"})
+                else return swalFunc({title:"สำเร็จ", icon:"success"})
+            }
+        })
 
     }
 

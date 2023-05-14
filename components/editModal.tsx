@@ -55,7 +55,7 @@ function EditModal (props: { name: any; studentID: any; number: any; yearClass: 
 
     const update = async (id : any) => {
 
-        const res = await fetch(`/api/update/${id}`, {
+        const res = await fetch(`/api/update/${id}?isUserUpdate=false`, {
             method: "POST",
             mode: "cors",
             cache: "no-cache",
